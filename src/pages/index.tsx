@@ -21,6 +21,8 @@ import { AiFillInstagram, AiOutlineWhatsApp  } from "react-icons/ai"
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { MenuProvider } from "../contexts/MenuContext"
+import { Menu } from "../components/Menu"
 
 
 
@@ -30,9 +32,11 @@ export default function Home() {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: 'ease-out' })
   })
+  const [openMenu, setOpenMenu] = useState<boolean>(false)
   return (
-    <div>
+    <MenuProvider value={{openMenu, setOpenMenu}}>
       <div id="Home" className="w-screen max-w-full">
+        <Menu/>
         <Nav />
         <div className="md:w-full w-[600px] shadow-xl flex items-center h-[440px] bg-home bg-no-repeat bg-cover  text-5xl md:text-7xl text-white font-medium  "><p data-aos="fade-right" className="w-3/4 ml-10">Bem vindo a <strong className="font-extrabold">Nunes pizzaria</strong>, venha apreciar uma boa pizza.</p> </div>
         <div data-aos="fade-up" className="flex md:w-full gap-7 px-10 md:gap-10 justify-between md:px-36 mt-32 w-[600px] pb-20 text-2xl font-bold text-white" >
@@ -103,7 +107,7 @@ export default function Home() {
           <button className="text-xl border items-center mt-48 hover:bg-red-400 hover:duration-300 hover:opacity-75  gap-2 flex rounded-full px-4 py-2 text-white border-white"><AiOutlineWhatsApp />Faça seu pedido</button>
         </div>
       </div>
-    </div>
+    </MenuProvider>
 
   )
 }
