@@ -4,8 +4,8 @@ import { AiOutlineWhatsApp  } from "react-icons/ai"
 export function Menu() {
     const { openMenu, setOpenMenu } = useMenuValue()
     return (
-        <div className={`${openMenu ? 'translate-x-0' : '-translate-x-full'} w-screen z-40 flex justify-center fixed duration-300 bg-black opacity-90`}>
-            <div className="w-[60%] h-screen shadow-2xl shadow-black bg-menuPizza bg-cover bg-no-repeat  px-16 py-10 gap-5 ">
+        <div className={`${openMenu ? 'translate-x-0' : '-translate-x-full'} md:w-screen h-screen w-[600px] z-40 flex justify-center fixed duration-300 md:bg-black opacity-90`}>
+            <div className="md:w-[60%] w-[95%] h-screen shadow-2xl shadow-black bg-menuPizza bg-cover bg-no-repeat px-8 md:px-16 py-10 gap-5 ">
                 <div className="grid grid-cols-2 w-full h-[90%]">
                     <div className="flex justify-between text-white text-xl font-bold w-full h-10 hover:opacity-50 p-1 rounded-md hover:duration-700 hover:bg-red-400">
                         <p>pizza de Calabresa</p>
